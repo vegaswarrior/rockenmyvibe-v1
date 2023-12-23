@@ -40,8 +40,8 @@ router.post('/', (req, res) => {
     }
 
     res.send({
-      message: 'Image Uploaded Successfully',
-      image: `/images/${req.file.filename}`,
+      message: "Image Uploaded Successfully",
+      image: `/${req.file.path.replace(/\\/g, "/")}`,
     });
   });
 });
