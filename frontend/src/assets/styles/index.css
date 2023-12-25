@@ -1,5 +1,15 @@
+
 main {
   min-height: 80vh;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to right, rgb(37, 196, 210) ,  rgb(209, 98, 209));
+}
+.wrapper {
+  min-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
 }
 
 .rating span {
@@ -50,4 +60,11 @@ table th {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-background-image{
+  height: 600px;
+  width: 600px;
+ 
+
 }

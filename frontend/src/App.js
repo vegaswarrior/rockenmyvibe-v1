@@ -26,8 +26,9 @@ const App = () => {
   return (
     <>
       <ToastContainer />
-      <Header />
+      
       <main className='py-3'>
+      <Header />
         <Container>
           <Outlet />
         </Container>

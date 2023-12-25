@@ -1,13 +1,15 @@
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { useGetProductsQuery } from '../slices/productsApiSlice';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Product from '../components/Product';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import Paginate from '../components/Paginate';
-import ProductCarousel from '../components/ProductCarousel';
+// import ProductCarousel from '../components/ProductCarousel';
 import Meta from '../components/Meta';
+import '../assets/styles/screens-css/homeScreen.css'
+import heroImage from '../assets/logo.png'
 
 const HomeScreen = () => {
   const { pageNumber, keyword } = useParams();
@@ -17,15 +19,18 @@ const HomeScreen = () => {
     pageNumber,
   });
 
+
   return (
-    <>
-      {!keyword ? (
-        <ProductCarousel />
-      ) : (
-        <Link to='/' className='btn btn-light mb-4'>
-          Go Back
-        </Link>
-      )}
+    <wrapper>
+      {
+        <Container className='hero-container'>
+          <Row>
+             <h1 className='text-center'>Welcome to Rocken My Vibe</h1>
+              <img src={heroImage} className="hero-background-image" alt="hero-image" />
+              <Button className="hero-button">Shop Now</Button>
+          </Row>
+        </Container>
+      }
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -50,7 +55,7 @@ const HomeScreen = () => {
           />
         </>
       )}
-    </>
+    </wrapper>
   );
 };
 
